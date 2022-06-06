@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" ></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous"
+        >
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+        <script type="module" src="../src/enumerations.js"></script> 
+        <script type="module" src="../src/viewData.js"></script> 
+        <script type="module" src="../src/createSummary.js"></script> 
+    </head> 
+
+    <body>
+        <div id="nav-div" class="row justify-content-center">
+            <script>
+				if (localStorage.getItem("institution")) {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar2.html");
+					});
+				} else {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar.html");
+					});
+				}
+			</script>
+        </div>
+
+        <a href="./index.html">
+            <center>
+                <img src="../img/sharkLogo.png" alt = "MainLogo" width = "450">
+            </center>
+        </a>
+
+        <br><br>
+
+        <section id="login-header">
+            <center>
+                <h1>Create a Summary<h1>
+                <h2 id="institution">Your Current Institution is: ...<h2>
+            </center>
+        </section>
+
+        <br>
+        
+        <center>
+            <div style="max-width:400px; word-wrap:break-word;" id="narrow_institutions">
+                <br>
+                
+                Narrow Down with an institution
+                
+                <br><br>
+                
+                <select name="Data Entry" id="select_institutions"></select>
+                
+                <br> 
+            </div>
+
+            <br>
+
+            <div style="max-width:400px; word-wrap:break-word;" id="narrow_entries">
+                <br>
+                
+                Narrow Down with an Entry
+
+                <br><br>
+                
+                <select name="Data Entry" id="select_entries"></select>
+                
+                <br> 
+            </div>
+
+            <br>
+
+            <div style="max-width:400px; word-wrap:break-word;" id="narrow_exhibits">
+                <br>
+                
+                Narrow Down with an Exhibit
+
+                <br><br>
+                
+                <select name="Data Entry" id="select_exhibits"></select>
+                
+                <br> 
+            </div>
+
+            <br>
+
+            <div style="max-width:400px; word-wrap:break-word;" id="narrow_females">
+                <br>
+                
+                Narrow Down with a Female
+
+                <br><br>
+                
+                <select name="Data Entry" id="select_females"></select>
+                
+                <br> 
+            </div>
+            
+            <br><br><br>
+            
+            <button id="download" style="cursor: pointer">
+                Download a Spreadsheet with Selected Eggs
+            </button>
+
+            <br><br><br>
+
+            <input id="summary" type="image" src="../img/create-button.png" width="250" height = "100" style="margin-left: -20px;">
+
+            <br><br><br><br>
+        </center>
+
+        <form class="fixedbutton" id="back_button">
+            <input type="image" src="../img/buttons-04.png" width="250" height = "100" style="margin-left: 20px;">
+        </form>
+    </body>
+</html>

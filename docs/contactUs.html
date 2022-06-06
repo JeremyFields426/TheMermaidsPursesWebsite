@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Zebra Shark</title>
+    <meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous"
+    >
+
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/contactUs.css" rel="stylesheet">
+
+    <script type="module" src="../src/contactUs.js"></script>
+</head>
+
+<body>
+    <div id="nav-div" class="row justify-content-center">
+        <script>
+            if (localStorage.getItem("institution")) {
+                $(document).ready(function () {
+                    $("#nav-div").load("navBar2.html");
+                });
+            } else {
+                $(document).ready(function () {
+                    $("#nav-div").load("navBar.html");
+                });
+            }
+        </script>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div class="row person-info-div">
+                    <div class="col-3">
+                        <img src="../img/Jen-Wyffels.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-9">
+                        <h1>Dr. Jen Wyffels</h1>
+                        <i>wyffels@udel.edu</i>
+                        <p>
+                            I grew up in Illinois, far from the ocean and mermaid purses,
+                            immersed in waves of corn and soybeans.
+                            My research explores of the diversity of elasmobranch
+                            reproductive modes and embryonic specializations
+                            with a sprinkling of immunobiology and wound healing.
+                        </p>
+                        <a href=" https://bioinformatics.udel.edu/people/personnel/jennifer_wyffels/"
+                            class="text-light bg-danger rounded">Learn
+                            More</a>
+                    </div>
+                </div>
+                <div class="row person-info-div">
+                    <div class="col-3">
+                        <img src="../img/Kady-Lyons.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-9">
+                        <h1>Dr. Kady Lyons</h1></i>
+                        <i>klyons@georgiaaquarium.org</i>
+                        <p> Being a native to southern California, I have been captivated by marine biology
+                            since
+                            childhood.
+                            As a research scientist, my field of interest is ecophysiology with emphasis on
+                            reproduction
+                            and toxicology, particularly from the female perspective.</p>
+                        <a href="https://www.georgiaaquarium.org/our-team/dr-kady-lyons/"
+                            class="text-light bg-danger rounded">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="../img/eggCasesDog.JPG" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h1>Contact Form</h1>
+        </div>
+        <div class="row">
+            <!-- Inputs for the Contact form -->
+            <form id="contact-form" class="col" style="display:flex; flex-direction: column;">
+                <input type="hidden" name="contact_number">
+                <label for="user_fname"> First Name: </label>
+                <input type="text" id="user_fname" name="user_fname" placeholder="Type Your First Name..." required>
+                <label for="user_lname"> Last Name: </label>
+                <input type="text" id="user_lname" name="user_lname" placeholder="Type Your Last Name..." required>
+                <label for="user_email"> Email: </label>
+                <input type="email" id="user_email" name="user_email" placeholder="Type Your Email..." required>
+                <label for="user_phone"> Phone Number: </label>
+                <input type="tel" id="user_phone" name="user_phone" placeholder="Type Your Phone Number..."
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                <label for="user_message">Message:</label>
+                <textarea id="user_message" name="user_message" placeholder="Type Your Message..." required></textarea>
+                <input type="submit" value="Send">
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

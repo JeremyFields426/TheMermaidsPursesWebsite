@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zebra Shark</title>
+    <meta charset="utf-8">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+    ></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous"
+    >
+    
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+
+    <script type="module" src="../src/form.js"></script>
+</head>
+
+<body>
+    <div id="nav-div" class="row justify-content-center">
+        <script>
+            if (localStorage.getItem("institution")) {
+                $(document).ready(function () {
+                    $("#nav-div").load("navBar2.html");
+                });
+            } else {
+                $(document).ready(function () {
+                    $("#nav-div").load("navBar.html");
+                });
+            }
+        </script>
+    </div>
+
+    <section id="login-header">
+        <center>
+            <h1>Download the Template, Fill it in, and Upload your Data.<h1>
+            <h2 id="institution">Your Current Institution is: ...<h2>
+        </center>
+    </section>
+
+    <br><br>
+
+    <div class="container-fluid justify-content-center">
+        <div class="col justify-content-center">
+            <a 
+                class="btn btn-primary" id="example-expand" href="../scripts/template.xlsx" download="data_template.xlsx"
+            >
+                Download Template
+            </a>
+
+            <div class="row">
+                <span>&#8595;</span>
+            </div>
+
+            <button 
+                class="btn btn-primary" type="button" data-toggle="collapse" data-target="#example-iframe" 
+                aria-controls="example-iframe" aria-expanded="true" id="example-expand"
+            >
+                Example Complete Form
+            </button>
+
+            <div class="collapse" id="example-iframe" aria-expanded="true">
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6xdbtKmefY8mew0-P3l2fjfho30gX2EdAuhwkT5fBotionYA-muYD8qjHkabWhg/pubhtml?gid=1774190189&amp;single=true&amp;widget=true&amp;headers=false">
+                </iframe>
+            </div>
+
+            <div class="row">
+                <span>&#8595;</span>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-6">
+                    <input id="input" type="file" accept=".xls,.xlsx" name="filename" class="form-control">
+                </div>
+
+                <input id="submit" type="submit" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+
+    <form id="back_button" class="fixedbutton">
+        <input type="image" src="../img/buttons-04.png" width="250" height = "100" style="margin-left: 20px;">
+    </form>
+</body>
+
+</html>

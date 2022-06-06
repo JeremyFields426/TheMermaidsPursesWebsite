@@ -11,8 +11,8 @@
             crossorigin="anonymous"
         >
 
-		<link href="../css/style.css" rel="stylesheet" />
-		<link href="../css/index.css" rel="stylesheet" />
+		<link href="./css/style.css" rel="stylesheet" />
+		<link href="./css/index.css" rel="stylesheet" />
 	</head>
 	
 	<body>
@@ -20,11 +20,11 @@
 			<script>
 				if (localStorage.getItem("institution")) {
 					$(document).ready(function () {
-						$("#nav-div").load("navBar2.html");
+						$("#nav-div").load("./html/navBar2.html");
 					});
 				} else {
 					$(document).ready(function () {
-						$("#nav-div").load("navBar.html");
+						$("#nav-div").load("./html/navBar.html");
 					});
 				}
 			</script>
@@ -33,7 +33,7 @@
 		<div class="container-fluid">
 				<div class="row justify-content-center">
 					<img
-						src="../img/sharkLogo.png"
+						src="./img/sharkLogo.png"
 						class="img-fluid"
 						alt="Responsive image"
 					/>

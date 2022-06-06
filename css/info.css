@@ -1,0 +1,33 @@
+body {
+      max-height: 100vh;
+}
+
+#eggs-img {
+  margin: auto;
+  display: block;
+}
+
+img {
+  max-height: 75vh;
+  padding-bottom: 5%;
+}
+
+p {
+  font-size: 2vw;
+}
+
+li {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background: none;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  background: none;
+}

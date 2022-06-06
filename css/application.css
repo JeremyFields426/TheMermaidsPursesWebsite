@@ -1,0 +1,38 @@
+.button1 {
+    /*button style 1*/
+    background-color: orange;
+    display: inline-flex;
+    color: black;
+    margin: 5px;
+    padding: 50px;
+    width: 100px;
+    border-radius: 50px;
+    justify-content: center;
+    text-decoration: none;
+}
+.button1:hover {
+    /*button hover style 1*/
+    background-color: lightcoral;
+    color: black;
+  }
+  body {
+    /* Funky Background */
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background: linear-gradient(-45deg, #23a6d5, #7d53f0, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+} 
+
+/* Make Background move and stuff */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}   

@@ -1,0 +1,172 @@
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+} 
+
+h1 {
+    background: none;
+}
+
+p {
+    background: none;
+}
+
+i {
+    background: none;
+}
+  
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+    text-decoration: underline salmon;
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+/* Autocomplete emails and passwords will not make make
+input fields change colors */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: white !important;
+}
+
+#login-header h1 {
+    text-align: center;
+    font-size: 50px; 
+    font-weight: lighter;
+    letter-spacing:1px;
+    /* display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 2px 0;
+    grid-gap: 30px; */
+    align-items: baseline;
+}
+
+#login-header p {
+    text-align:  center;
+}
+
+/* Login Container Styling */
+#login-container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    background-color: rgba(65, 65, 65, 0.5);
+    padding: 15px;
+    width: 300px;
+    height: 375px;
+    color: white;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+/* Grid for so text and input fields are stacked */
+#login {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 25% 25% 25% 35% 10%;
+}
+
+/* "Sign In" text styling */
+#login-text {
+    grid-row-start: 1;
+    padding-bottom: 30px;
+    font-size: 25px;
+    font-style: normal
+}
+
+/* Email input field */
+#logInst {
+    grid-row-start: 2;
+    margin : 0 auto;
+}
+
+/* Password input field */
+#logPass {
+    margin : 0 auto;
+    grid-row-start: 3;
+
+}
+
+/* Login button styling */
+#login-button {
+    grid-row-start: 4;
+    margin: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: transparent;
+    border-radius: 20px;
+
+}
+
+#login-button:hover {
+    background-color: rgba(126, 255, 133, 0.5);
+    color: white;
+}
+
+/* Grid for sign up field so text and button are next to eachother */
+#sign-up-field {
+    grid-row-start: 5;
+    display: grid;
+    grid-template-columns: 30% 30%;
+    justify-content: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+#sign-up-text {
+    grid-column-start: 1;
+    text-align: center;
+}
+
+/* Sign up button styling */
+#sign-up {
+    grid-column-start: 2;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-style: normal;
+}
+
+#sign-up:hover {
+    color: rgba(126, 255, 133, 0.5);
+}
+
+.input {
+    width: 75%;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.input::placeholder{
+    color: white
+}
+
+.input:focus {
+    outline: none;
+}
+
+
+#login {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+#pageslink {
+    color: lightblue;
+}

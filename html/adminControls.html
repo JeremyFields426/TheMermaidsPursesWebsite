@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Zebra Shark</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+		<script type="module" src="../src/adminControls.js"></script>
+	</head>
+
+	<body>
+		<div id="nav-div" class="row justify-content-center">
+			<script>
+				if (localStorage.getItem("institution")) {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar2.html");
+					});
+				} else {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar.html");
+					});
+				}
+			</script>
+		</div>
+
+		<a href="./index.html">
+			<center>
+				<img src="../img/sharkLogo.png" alt="MainLogo" width="450" />
+			</center>
+		</a>
+
+		<form action="adminApplication.html" class="fixedbutton">
+			<input
+				type="image"
+				src="../img/buttons-04.png"
+				width="250"
+				height="100"
+				style="margin-left: 20px"
+			/>
+		</form>
+
+		<center>
+			<div style="max-width: 400px; word-wrap: break-word">
+				<br />
+
+				Choose an Entry for Deletion
+
+				<br /><br />
+
+				<select name="Data Entry" id="select_entries"></select>
+
+				<br /><br />
+
+				<button id="delete">Delete Entry</button>
+			</div>
+		</center>
+	</body>
+</html>

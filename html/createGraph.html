@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" ></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous"
+        >
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+        <script type="module" src="../src/enumerations.js"></script> 
+        <script type="module" src="../src/viewData.js"></script> 
+        <script type="module" src="../src/createGraph.js"></script> 
+    </head> 
+
+    <body>
+        <div id="nav-div" class="row justify-content-center">
+            <script>
+				if (localStorage.getItem("institution")) {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar2.html");
+					});
+				} else {
+					$(document).ready(function () {
+						$("#nav-div").load("navBar.html");
+					});
+				}
+			</script>
+        </div>
+
+        <a href="./index.html">
+            <center>
+                <img src="../img/sharkLogo.png" alt = "MainLogo" width = "450">
+            </center>
+         </a>
+
+         <br><br>
+
+        <center>
+            <h1>Create a Graph<h1>
+            <h2 id="institution">Your Current Institution is: ...<h2>
+        </center>
+
+        <br><br>
+        
+        <center>
+            <div id="Choose_Graph">
+                <h3>Choose the Type of Graph</h3>
+    
+                <br>
+    
+                <form>
+                    <input type="radio" id="Time_Graph_Radio" name="Graph Type" value="Time Graph">
+                    <label for="Time_Graph_Radio">Use a Time Graph</label><br>
+    
+                    <input type="radio" id="Bar_Graph_Radio" name="Graph Type" value="Bar Graph">
+                    <label for="Bar_Graph_Radio">Use a Bar Graph</label><br>
+                </form>
+
+                <br><br>
+            </div>
+
+
+            <div id="Choose_Data" hidden>
+                <h3>Choose What You Want to Compare (X-Axis)</h3>
+    
+                <br>
+    
+                <form>
+                    <div id="Institutions_Option">
+                        <input type="radio" id="Institutions_Radio" name="X-Axis" value="Institutions">
+                        <label for="Institutions_Radio">Compare Institutions</label><br>
+                    </div>
+
+                    <div id="Entries_Option">
+                        <input id="Entries_Radio" type="radio" name="X-Axis" value="Entries">
+                        <label for="Entries_Radio">Compare Entries</label><br>
+                    </div>
+    
+                    <input type="radio" id="Exhibits_Radio" name="X-Axis" value="Exhibits">
+                    <label for="Exhibits_Radio">Compare Exhibits</label><br>
+    
+                    <input type="radio" id="Females_Radio" name="X-Axis" value="Females">
+                    <label for="Females_Radio">Compare Females</label><br>
+                </form>
+    
+                <br><br>
+            </div>
+
+            <div id="Choose_Filters" hidden>
+                <h3>Choose How to Narrow Down the Data (Optional)</h3>
+    
+                <div style="max-width:400px; word-wrap:break-word;" id="narrow_institutions">
+                    <br>
+                    
+                    Narrow Down with an Institution:
+    
+                    <br><br>
+                    
+                    <select name="Data Entry" id="select_institutions"></select>
+                    
+                    <br> 
+                </div>
+    
+                <div style="max-width:400px; word-wrap:break-word;" id="narrow_entries">
+                    <br>
+                    
+                    Narrow Down with an Entry: 
+    
+                    <br><br>
+                    
+                    <select name="Data Entry" id="select_entries"></select>
+                    
+                    <br> 
+                </div>
+    
+                <div style="max-width:400px; word-wrap:break-word;" id="narrow_exhibits">
+                    <br>
+                    
+                    Narrow Down with an Exhibit: 
+    
+                    <br><br>
+                    
+                    <select name="Data Entry" id="select_exhibits"></select>
+                    
+                    <br> 
+                </div>
+    
+                <div style="max-width:400px; word-wrap:break-word;" id="narrow_females">
+                    <br>
+                    
+                    Narrow Down with a Female:
+    
+                    <br><br>
+                    
+                    <select name="Data Entry" id="select_females"></select>
+                    
+                    <br> 
+                </div>
+    
+                <br><br><br>
+            </div>
+
+            <div id="Choose_Comparison" hidden>
+                <h3>Choose How You Want to Compare the Data (Y-Axis)</h3>
+    
+                <br>
+    
+                <form>
+                    <input type="radio" id="Total_Eggs_Radio" name="Y-Axis" value="Total Eggs">
+                    <label for="Total_Eggs_Radio">Compare by Total Eggs</label><br>
+    
+                    <input type="radio" id="Total_Yolked_Eggs_Radio" name="Y-Axis" value="Total Yolked Eggs">
+                    <label for="Total_Yolked_Eggs_Radio">Compare by Total Yolked Eggs</label><br>
+    
+                    <input type="radio" id="Total_Unyolked_Eggs_Radio" name="Y-Axis" value="Total Unyolked Eggs">
+                    <label for="Total_Unyolked_Eggs_Radio">Compare by Total Unyolked Eggs</label><br>
+    
+                    <input type="radio" id="Mass_Radio" name="Y-Axis" value="Mass">
+                    <label for="Mass_Radio">Compare by Average Mass</label><br>
+    
+                    <input type="radio" id="Temperature_Radio" name="Y-Axis" value="Temperature">
+                    <label for="Temperature_Radio">Compare by Average Tank Temperature</label><br>
+                </form>                
+    
+                <br><br><br>
+            </div>
+
+
+            <input id="graph" hidden type="image" src="../img/create-button.png" width="250" height = "100">
+
+            <br><br><br><br><br><br>
+        </center>
+
+        <form class="fixedbutton" id="back_button">
+            <input type="image" src="../img/buttons-04.png" width="250" height = "100" style="margin-left: 20px;">
+        </form>
+    </body>
+</html>
